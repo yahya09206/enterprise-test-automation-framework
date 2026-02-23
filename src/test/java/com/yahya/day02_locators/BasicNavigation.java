@@ -15,11 +15,14 @@ public class BasicNavigation {
         // navigate to website
         driver.get("https://www.tesla.com");
 
+        // get the current url
+        System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
+
         // Use navigate to go back() one page
         driver.navigate().back();
 
         // stop execution for 2 seconds
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         // Navigate forward to tesla site
         driver.navigate().forward();
@@ -27,7 +30,18 @@ public class BasicNavigation {
         // Refresh the page using navigate.refresh()
         driver.navigate().refresh();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
+
+        // Navigate to google.com
+        driver.navigate().to("https://google.com");
+
+        // Get title of the page
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+
+        driver.manage().window().minimize();
+
+        // stop execution for 2 seconds
+        Thread.sleep(1000);
         driver.quit();
     }
 }
