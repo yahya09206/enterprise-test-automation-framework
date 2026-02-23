@@ -15,6 +15,18 @@ public class BasicNavigation {
         // navigate to website
         driver.get("https://www.tesla.com");
 
+        // Use navigate to go back() one page
+        driver.navigate().back();
+
+        // stop execution for 2 seconds
+        Thread.sleep(2000);
+
+        // Navigate forward to tesla site
+        driver.navigate().forward();
+
+        // Refresh the page using navigate.refresh()
+        driver.navigate().refresh();
+
         Thread.sleep(2000);
         driver.quit();
     }
