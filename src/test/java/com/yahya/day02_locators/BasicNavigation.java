@@ -7,17 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BasicNavigation {
     public static void main(String[] args) {
 
+        // Setup browser driver
         WebDriverManager.chromedriver().setup();
+        // Create new instance of Chrome browser
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.facebook.com");
 
-        /** TODO
-         * Find email box by ID and enter something
-         * Find password box by name and enter password
-         * Login
-         * Wait for 3 seconds
-         * Click on forgot password
-         */
+        // navigate to website
+        driver.get("https://www.tesla.com");
 
     }
 }
