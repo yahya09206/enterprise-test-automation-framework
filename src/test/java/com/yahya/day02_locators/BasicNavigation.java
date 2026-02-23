@@ -4,7 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FindByID_byName_ByLinkText {
+public class BasicNavigation {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
@@ -15,9 +15,7 @@ public class FindByID_byName_ByLinkText {
          * Find email box by ID and enter something
          * Find password box by name and enter password
          * Login
-         *
          * Wait for 3 seconds
-         *
          * Click on forgot password
          */
 
