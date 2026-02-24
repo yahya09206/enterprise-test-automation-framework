@@ -1,4 +1,4 @@
-package com.yahya.day02_locators;
+package com.yahya.day01_navigation;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
