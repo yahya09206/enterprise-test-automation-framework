@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TaskOne {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -29,5 +29,9 @@ public class TaskOne {
         } else {
             System.out.println("Title Verification Failed!");
         }
+
+        Thread.sleep(1000);
+        driver.quit();
     }
+
 }
