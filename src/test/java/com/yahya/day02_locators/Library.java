@@ -13,11 +13,13 @@ public class Library {
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://library2.cydeo.com/login.html");
 
-        WebElement username = driver.findElement(By.className("form-control valid"));
+        WebElement username = driver.findElement(By.className("form-control"));
         username.sendKeys("incorrect@email.com");
 
         WebElement password = driver.findElement(By.id("inputPassword"));
         password.sendKeys("incorrect password");
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(1000);
 
