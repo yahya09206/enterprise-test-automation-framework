@@ -20,5 +20,14 @@ public class TaskOne {
         } else {
             System.out.println("URL Verification Failed!");
         }
+
+        String expectedTitle = "Practice";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.contains(expectedTitle)){
+            System.out.println("Title Verification Passed!");
+        } else {
+            System.out.println("Title Verification Failed!");
+        }
     }
 }
