@@ -1,6 +1,9 @@
 package com.yahya.util;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
@@ -17,9 +20,15 @@ public class WebDriverFactory {
 
     public static WebDriver getDriver(String browserType){
 
-        switch(browserType):
-        case 1:
-
-
+        if (browserType.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            return new ChromeDriver();
+        } else if (browserType.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            return new FirefoxDriver();
+        }else {
+            System.out.println("Given string does not represent any browser");
+            return null;
+        }
     }
 }
