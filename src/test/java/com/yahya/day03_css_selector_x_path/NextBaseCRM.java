@@ -26,6 +26,11 @@ public class NextBaseCRM {
         String expectedErrMsg = "Incorrect login or password";
         String actualErrMsg = errorMsg.getText();
 
+        /**
+         * ANOTHER WAY TO CHECK FOR ERROR MESSAGE WITH LESS CODE
+         * String actualErrMsg = driver.findElement(By.className("errortext")).getText();
+         */
+
         Thread.sleep(1000);
 
         if (actualErrMsg.contains(expectedErrMsg)){
