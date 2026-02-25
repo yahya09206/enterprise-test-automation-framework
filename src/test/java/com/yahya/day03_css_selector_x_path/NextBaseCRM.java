@@ -1,5 +1,6 @@
 package com.yahya.day03_css_selector_x_path;
 
+import com.yahya.util.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,11 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class NextBaseCRM {
+
     public static void main(String[] args) throws InterruptedException {
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.navigate().to("https://login1.nextbasecrm.com/");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        //driver.navigate().to("https://login1.nextbasecrm.com/");
+        driver.get("https://login1.nextbasecrm.com/");
 
         WebElement username = driver.findElement(By.name("USER_LOGIN"));
         username.sendKeys("incorrect");

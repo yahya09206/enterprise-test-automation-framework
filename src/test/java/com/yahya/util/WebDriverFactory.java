@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebDriverFactory {
-
-
+public class WebDriverFactory{
     /**
      * Create a new method called getDriver
      * static method
