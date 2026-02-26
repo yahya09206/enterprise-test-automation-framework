@@ -14,6 +14,19 @@ public class ForgotPassword {
         WebElement goHome = driver.findElement(By.xpath("//li/a[@class='nav-link']"));
         System.out.println(goHome.isDisplayed());
 
+        WebElement forgotHeader = driver.findElement(By.xpath("//div/h2[.='Forgot Password']"));
+        System.out.println(forgotHeader.isDisplayed());
+
+        WebElement emailTxt = driver.findElement(By.cssSelector("label[for='email']"));
+        System.out.println(emailTxt.isDisplayed());
+
+        WebElement emailInputBox = driver.findElement(By.xpath("//div/input[@name='email']"));
+        System.out.println(emailInputBox.isDisplayed());
+
+        WebElement retrievePassword = driver.findElement(By.cssSelector("button[id='form_submit']"));
+        System.out.println(retrievePassword.isDisplayed());
+
+
         Thread.sleep(1000);
         driver.quit();
     }
