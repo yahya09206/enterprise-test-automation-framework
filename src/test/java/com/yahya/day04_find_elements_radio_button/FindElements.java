@@ -17,9 +17,9 @@ public class FindElements {
         driver.get("https://practice.cydeo.com/abtest");
 
         List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+        System.out.println(allLinks.size());
 
         for (WebElement allLink : allLinks) {
-            System.out.println(allLink.getSize());
             System.out.println(allLink.getText());
             System.out.println(allLink.getAttribute("href"));
         }
