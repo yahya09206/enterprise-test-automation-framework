@@ -2,6 +2,7 @@ package com.yahya.day05_dynamic_elements_testng_dropdowns;
 
 import com.yahya.util.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +24,12 @@ public class AddRemoveElements {
         System.out.println(deleteBtn.isDisplayed());
 
         deleteBtn.click();
-        System.out.println(deleteBtn.isDisplayed());
+
+        try {
+            System.out.println(deleteBtn.isDisplayed());
+        } catch (StaleElementReferenceException e){
+            System.out.println("Stale element exception occurred");
+        }
 
         Thread.sleep(1000);
 
