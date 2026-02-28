@@ -18,7 +18,15 @@ public class RadioUtility {
         List<WebElement> radioBtns = driver.findElements(By.xpath("//input[@name='sport']"));
 
         for (WebElement radioBtn : radioBtns) {
-            System.out.println(radioBtn.getAttribute("id"));
+
+            String actualID = radioBtn.getAttribute("id");
+            System.out.println(actualID);
+
+            if (actualID.equals("hockey")){
+                radioBtn.click();
+                System.out.println(radioBtn.isSelected());
+                break;
+            }
         }
 
     }
