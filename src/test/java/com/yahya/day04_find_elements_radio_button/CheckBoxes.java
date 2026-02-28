@@ -10,6 +10,7 @@ public class CheckBoxes {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
+        // Navigate to site
         driver.get("https://practice.cydeo.com/checkboxes");
 
         WebElement checkboxOne = driver.findElement(By.xpath("//form/input[@name='checkbox1']"));
