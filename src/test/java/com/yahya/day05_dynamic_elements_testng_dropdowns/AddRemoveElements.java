@@ -19,7 +19,7 @@ public class AddRemoveElements {
 
         Thread.sleep(1000);
 
-        WebElement deleteBtn = driver.findElement(By.xpath("//button[.='delete']"));
+        WebElement deleteBtn = driver.findElement(By.xpath("//button[.='Delete']"));
         System.out.println(deleteBtn.isDisplayed());
 
         deleteBtn.click();
