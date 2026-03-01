@@ -15,6 +15,11 @@ public class RadioUtility {
         driver.get("https://practice.cydeo.com/radio_buttons");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        // click and verify hockey radio button is selected
+        clickAndVerifyRadioButton(driver, "sport", "hockey");
+
+        driver.quit();
+
     }
 
     private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttr, String expectedID){
