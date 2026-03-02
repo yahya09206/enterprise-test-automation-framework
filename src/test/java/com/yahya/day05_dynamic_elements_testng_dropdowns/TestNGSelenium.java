@@ -29,8 +29,8 @@ public class TestNGSelenium {
     @Test
     public void title_verification(){
 
-        driver.get("https://cydeo.com");
-        Assert.assertTrue(driver.getTitle().equals("Cydeo"));
+        driver.get("https://practice.cydeo.com");
+        Assert.assertTrue(driver.getTitle().equals("Practice"));
 
     }
 
