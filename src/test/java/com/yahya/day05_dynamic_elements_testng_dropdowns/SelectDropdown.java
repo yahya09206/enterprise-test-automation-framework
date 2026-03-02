@@ -35,6 +35,11 @@ public class SelectDropdown {
         String expectedOption = "Please select an option";
         String actualOption = simpleDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals(actualOption, expectedOption);
+
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+        String expectedState = "Select a State";
+        String actualState = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualState, expectedState);
     }
 
 
