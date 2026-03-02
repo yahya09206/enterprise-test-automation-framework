@@ -32,6 +32,7 @@ public class SelectDropdown {
         driver.get("https://practice.cydeo.com/dropdown");
 
         Select simpleDropdown = new Select(driver.findElement(By.id("dropdown")));
+        System.out.println(simpleDropdown.getOptions());
         String expectedOption = "Please select an option";
         String actualOption = simpleDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals(actualOption, expectedOption);
