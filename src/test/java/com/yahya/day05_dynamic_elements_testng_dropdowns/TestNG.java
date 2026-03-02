@@ -1,10 +1,17 @@
 package com.yahya.day05_dynamic_elements_testng_dropdowns;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestNG {
+
+    @BeforeClass
+    public void setupClass(){
+
+        System.out.println("---> Before class is running");
+    }
 
     @BeforeMethod
     public void setupMethod(){
