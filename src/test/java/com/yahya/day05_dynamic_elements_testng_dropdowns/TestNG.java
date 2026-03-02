@@ -1,5 +1,6 @@
 package com.yahya.day05_dynamic_elements_testng_dropdowns;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -26,10 +27,14 @@ public class TestNG {
     @Test (priority = 1)
     public void test1(){
         System.out.println("Test 1 is running");
+        Assert.assertEquals("apple", "apple");
     }
 
     @Test (priority = 2)
     public void test2(){
         System.out.println("Test 2 is running");
+        String actual = "white";
+        String expected = "white";
+        Assert.assertTrue(actual.equals(expected));
     }
 }
