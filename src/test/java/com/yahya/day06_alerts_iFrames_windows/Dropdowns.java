@@ -1,0 +1,44 @@
+package com.yahya.day06_alerts_iFrames_windows;
+
+import com.yahya.util.WebDriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Dropdowns {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setup(){
+        driver = WebDriverFactory.getDriver("chrome");
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    @AfterClass
+    public void teardown(){
+        driver.quit();
+    }
+
+    @Test
+    public void verifyDate() throws InterruptedException {
+
+        driver.get("https://practice.cydeo.com/dropdown");
+
+        Select yearDropdown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
+        Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
+        Thread.sleep(2000);
+        yearDropdown.selectByVisibleText("1993");
+        Thread.sleep(2000);
+        monthDropdown.selectByValue("11");
+        Thread.sleep(2000);
+        dayDropdown.selectByIndex(3);
+
+
+
+    }
+}
