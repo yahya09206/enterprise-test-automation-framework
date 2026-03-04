@@ -52,8 +52,19 @@ public class Dropdowns {
         Assert.assertEquals(actualMonth, expectedMonth);
         Assert.assertEquals(actualDay, expectedDay);
 
+    }
 
+    @Test
+    public void verifyState() throws InterruptedException {
 
+        driver.get("https://practice.cydeo.com/dropdown");
+
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+        stateDropdown.selectByIndex(14);
+        Thread.sleep(1000);
+        stateDropdown.selectByVisibleText("Virginia");
+        Thread.sleep(1000);
+        stateDropdown.selectByValue("CA");
 
 
     }
