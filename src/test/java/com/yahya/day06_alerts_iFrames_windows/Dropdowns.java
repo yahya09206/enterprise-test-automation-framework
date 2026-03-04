@@ -4,6 +4,7 @@ import com.yahya.util.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -37,6 +38,21 @@ public class Dropdowns {
         monthDropdown.selectByValue("11");
         Thread.sleep(2000);
         dayDropdown.selectByIndex(3);
+
+        // Validate info
+        String expectedYear = "1933";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertTrue(actualYear.equals(expectedYear));
+        Assert.assertEquals(actualMonth, expectedMonth);
+        Assert.assertEquals(actualDay, expectedDay);
+
+
 
 
 
