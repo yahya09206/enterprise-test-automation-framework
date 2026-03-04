@@ -66,6 +66,9 @@ public class Dropdowns {
         Thread.sleep(1000);
         stateDropdown.selectByValue("CA");
 
+        String expectedState = "California";
+        String actualState = stateDropdown.getFirstSelectedOption().getText();
 
+        Assert.assertEquals(actualState, expectedState);
     }
 }
