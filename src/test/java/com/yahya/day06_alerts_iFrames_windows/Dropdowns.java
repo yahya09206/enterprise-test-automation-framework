@@ -3,6 +3,7 @@ package com.yahya.day06_alerts_iFrames_windows;
 import com.yahya.util.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -70,5 +71,26 @@ public class Dropdowns {
         String actualState = stateDropdown.getFirstSelectedOption().getText();
 
         Assert.assertEquals(actualState, expectedState);
+    }
+
+    @Test
+    public void verifyDropdownLink() throws InterruptedException {
+
+        driver.get("https://practice.cydeo.com/dropdown");
+
+        WebElement websiteDropdown = driver.findElement(By.cssSelector("a[role='button']"));
+        websiteDropdown.click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div/a[.='Facebook']")).click();
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        String expectedTitle = "Facebook";
+        String actualTitle = driver.getTitle();
+        Thread.sleep(2000);
+        Assert.assertEquals(actualTitle, expectedTitle);
+
+
+
+
     }
 }
