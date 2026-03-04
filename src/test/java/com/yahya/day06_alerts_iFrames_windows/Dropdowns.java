@@ -95,9 +95,51 @@ public class Dropdowns {
     @Test
     public void verifyAlert() throws InterruptedException {
 
+        driver.get("https://practice.cydeo.com/javascript_alerts");
+
         WebElement infoAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         infoAlertButton.click();
         Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+        Thread.sleep(2000);
+        WebElement resultText = driver.findElement(By.xpath("//div/p[@id='result']"));
+
+        Assert.assertTrue(resultText.isDisplayed());
+    }
+
+    @Test
+    public void verifyConfirmation() throws InterruptedException {
+
+        driver.get("https://practice.cydeo.com/javascript_alerts");
+
+        WebElement confirmButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        confirmButton.click();
+
+        Alert alert = driver.switchTo().alert();
+
+        alert.accept();
+
+        Thread.sleep(2000);
+        WebElement resultText = driver.findElement(By.xpath("//div/p[@id='result']"));
+
+        Assert.assertTrue(resultText.isDisplayed());
+
+    }
+
+    @Test
+    public void verifyPrompt() throws InterruptedException {
+
+        driver.get("https://practice.cydeo.com/javascript_alerts");
+
+        WebElement confirmButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        confirmButton.click();
+        Thread.sleep(2000);
+
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("hello");
+        Thread.sleep(2000);
+
         alert.accept();
 
         Thread.sleep(2000);
