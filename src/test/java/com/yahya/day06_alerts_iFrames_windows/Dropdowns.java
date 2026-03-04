@@ -1,6 +1,7 @@
 package com.yahya.day06_alerts_iFrames_windows;
 
 import com.yahya.util.WebDriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -89,8 +90,19 @@ public class Dropdowns {
         Thread.sleep(2000);
         Assert.assertEquals(actualTitle, expectedTitle);
 
+    }
 
+    @Test
+    public void verifyAlert() throws InterruptedException {
 
+        WebElement infoAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
+        infoAlertButton.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
 
+        Thread.sleep(2000);
+        WebElement resultText = driver.findElement(By.xpath("//div/p[@id='result']"));
+
+        Assert.assertTrue(resultText.isDisplayed());
     }
 }
