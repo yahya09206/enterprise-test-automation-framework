@@ -33,11 +33,11 @@ public class Dropdowns {
         Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
         Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
         Thread.sleep(2000);
-        yearDropdown.selectByVisibleText("1993");
+        yearDropdown.selectByVisibleText("1933");
         Thread.sleep(2000);
         monthDropdown.selectByValue("11");
         Thread.sleep(2000);
-        dayDropdown.selectByIndex(3);
+        dayDropdown.selectByIndex(0);
 
         // Validate info
         String expectedYear = "1933";
