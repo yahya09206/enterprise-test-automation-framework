@@ -43,4 +43,10 @@ public class BrowserUtil {
         Assert.assertTrue(actualTitle.contains(expectedTitle));
 
     }
+
+    public static void verifyTitle(WebDriver driver, String expectedTitle){
+
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
+
+    }
 }
