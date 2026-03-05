@@ -17,6 +17,8 @@ public class ReadingFromProperties {
 
         properties.load(file);
 
+        System.out.println("properties.getProperty(\"browser\") = " + properties.getProperty("browser"));
+
 
     }
 }
