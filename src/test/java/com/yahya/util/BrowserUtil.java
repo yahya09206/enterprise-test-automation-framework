@@ -1,6 +1,11 @@
 package com.yahya.util;
 
 
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import java.util.Set;
+
 /**
  * This call will only be storing the utility methods that can be used across the project.
  */
@@ -14,5 +19,29 @@ public class BrowserUtil {
         }catch (InterruptedException e){
 
         }
+    }
+
+    public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedTitle){
+
+
+        // Return and store all window handles in a Set
+        Set<String> allWindowHandles = driver.getWindowHandles();
+
+        for (String each : allWindowHandles) {
+
+            driver.switchTo().window(each);
+            System.out.println(driver.getCurrentUrl());
+
+            if (driver.getCurrentUrl().contains("etsy")){
+                break;
+            }
+        }
+
+        // Assert that title contains "etsy"
+        String actualTitle = driver.getTitle();
+        String expectedInTitle = "Etsy";
+
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+
     }
 }
