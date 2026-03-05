@@ -40,6 +40,4 @@ public class IFrame {
         Thread.sleep(2000);
 
     }
-
-
 }
