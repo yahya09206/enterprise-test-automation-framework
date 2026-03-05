@@ -27,8 +27,9 @@ public class WindowHandling {
     @Test
     public void window_handling_test(){
 
-        ((JavascriptExecutor) driver).executeScript(window.open('https://google.com', '_blank'););
+        //((JavascriptExecutor) driver).executeScript(window.open('https://google.com', '_blank'););
 
         BrowserUtil.switchWindowAndVerify(driver, "etsy", "Etsy");
     }
+
 }
