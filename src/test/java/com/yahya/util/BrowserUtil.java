@@ -32,16 +32,15 @@ public class BrowserUtil {
             driver.switchTo().window(each);
             System.out.println(driver.getCurrentUrl());
 
-            if (driver.getCurrentUrl().contains("etsy")){
+            if (driver.getCurrentUrl().contains(expectedInUrl)){
                 break;
             }
         }
 
-        // Assert that title contains "etsy"
+        // Assert that title contains "Etsy"
         String actualTitle = driver.getTitle();
-        String expectedInTitle = "Etsy";
 
-        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+        Assert.assertTrue(actualTitle.contains(expectedTitle));
 
     }
 }
