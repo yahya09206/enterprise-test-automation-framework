@@ -15,9 +15,17 @@ public class ConfigReader {
             FileInputStream file = new FileInputStream("config.properties");
             //3 - Load the "properties" object with "file" (load properties)
             properties.load(file);
+
+            // close the file in memory
+            file.close();
         } catch (IOException e ){
             System.out.println("FILE NOT FOUND WITH GIVEN PATH!!!!");
             e.printStackTrace();
         }
+    }
+
+    public static String getProperty(String keyword){
+
+        return properties.getProperty(keyword);
     }
 }
