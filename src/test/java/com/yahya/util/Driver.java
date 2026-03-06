@@ -54,9 +54,14 @@ public class Driver {
         return driver;
     }
 
-    public void tearDown(){
+    public static void closeDriver(){
 
-        Driver.getDriver().quit();
-        driver = null;
+        // if driver isn't null
+        if (driver != null){
+            // terminate the instance of the driver
+            driver.quit();
+            // assign driver back to null
+            driver = null;
+        }
     }
 }
