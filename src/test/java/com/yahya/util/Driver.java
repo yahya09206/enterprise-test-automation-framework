@@ -37,6 +37,12 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new ChromeDriver();
+                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                default:
+
             }
 
         }
