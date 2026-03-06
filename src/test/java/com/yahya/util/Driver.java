@@ -37,11 +37,14 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
                 default:
+                    System.out.println("NO DRIVER FOUND");
 
             }
 
