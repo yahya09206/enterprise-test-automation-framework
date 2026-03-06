@@ -50,6 +50,4 @@ public class Driver {
         // return existing driver if it is not null
         return driver;
     }
-
-
 }
