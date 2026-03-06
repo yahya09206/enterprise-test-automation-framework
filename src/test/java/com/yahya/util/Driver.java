@@ -53,4 +53,10 @@ public class Driver {
         // return existing driver if it is not null
         return driver;
     }
+
+    public void tearDown(){
+
+        Driver.getDriver().quit();
+        driver = null;
+    }
 }
