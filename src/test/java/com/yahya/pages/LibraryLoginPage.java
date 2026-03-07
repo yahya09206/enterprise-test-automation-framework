@@ -15,6 +15,9 @@ public class LibraryLoginPage {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
+    @FindBy(xpath = "//div[.='This field is required.']")
+    public WebElement fieldRequiredErrorMsg;
+
     public LibraryLoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
