@@ -21,5 +21,6 @@ public class ExplicitWaitTest {
 
         DynamicLoadPage dynamicLoadPage = new DynamicLoadPage();
         Assert.assertTrue(dynamicLoadPage.doneMsg.isDisplayed());
+        Assert.assertTrue(dynamicLoadPage.spongeBobImg.isDisplayed());
     }
 }
