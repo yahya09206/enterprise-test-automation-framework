@@ -12,11 +12,17 @@ public class LibraryLoginPage {
      * 2 - Use FindBy annotation instead of WebElement
      */
 
+    @FindBy(id = "inputEmail")
+    public WebElement emailInput;
+
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
     @FindBy(xpath = "//div[.='This field is required.']")
     public WebElement fieldRequiredErrorMsg;
+
+    @FindBy(xpath = "//div[.='Please enter a valid email address']/div")
+    public WebElement enterValidEmailErrorMsg;
 
     public LibraryLoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
