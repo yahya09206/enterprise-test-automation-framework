@@ -15,14 +15,21 @@ public class LibraryLoginPage {
     @FindBy(id = "inputEmail")
     public WebElement emailInput;
 
+    @FindBy(id = "inputPassword")
+    public WebElement passwordInput;
+
+
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
     @FindBy(xpath = "//div[.='This field is required.']")
     public WebElement fieldRequiredErrorMsg;
 
-    @FindBy(xpath = "//div[.='Please enter a valid email address']/div")
+    @FindBy(xpath = "//div[.='Please enter a valid email address.']/div")
     public WebElement enterValidEmailErrorMsg;
+
+    @FindBy(xpath = "//div[.='Sorry, Wrong Email or Password']")
+    public WebElement wrongEmailOrPasswordMsg;
 
     public LibraryLoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
