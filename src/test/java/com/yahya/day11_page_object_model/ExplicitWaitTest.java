@@ -14,6 +14,7 @@ public class ExplicitWaitTest {
     @Test
     public void verifyTitleIsDisplayed(){
 
+        // Find new site
         Driver.getDriver().get("https://practice.cydeo.com/");
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
